@@ -1,0 +1,28 @@
+:root {
+    background-color: black;
+}
+
+.upperBlock {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    grid-template-rows: repeat(2, 1fr); 
+    justify-items: stretch; 
+    align-items: stretch; 
+    min-height: 100vh;
+    gap: 10px; 
+}
+
+.element {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    border: 1px solid gold;
+    height: auto;
+    width: 100%; 
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
