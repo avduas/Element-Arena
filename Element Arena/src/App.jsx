@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import MainScreen from './components/mainScreen';
+import MainScreen from './components/main screen/mainScreen';
 
 function App() {
 

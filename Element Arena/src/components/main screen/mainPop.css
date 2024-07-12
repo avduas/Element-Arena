@@ -1,0 +1,91 @@
+@font-face {
+  font-family: "KnightWarrior-w16n8";
+  src: url("../fonts/KnightWarrior-w16n8.otf") format("truetype");
+  font-style: normal;
+  font-weight: normal;
+}
+
+.modal-1 {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+}
+
+.modal-dialog-1 {
+  position: relative;
+  margin: 30vh auto;
+  padding: 20px;
+  width: 80%;
+  max-width: 500px;
+  background: none;
+  border-radius: 5px;
+  color: gold;
+  text-align: center;
+  font-size: xx-large;
+  font-family: "KnightWarrior-w16n8", sans-serif; 
+}
+
+.wrapper {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+button {
+  display: block;
+  width: 200px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 18px;
+  font-family: "KnightWarrior-w16n8", sans-serif; 
+  text-decoration: none;
+  color: #333;
+  border: 2px solid #333;
+  letter-spacing: 2px;
+  text-align: center;
+  position: relative;
+  background: none;
+  overflow: hidden;
+  cursor: pointer;
+  z-index: 1;
+  transition: color .35s, border-color .35s;
+}
+
+button span {
+  position: relative;
+  z-index: 2;
+}
+
+button:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(to right,
+  #FF4500, 
+  #4682B4, 
+  #00FF00, 
+  #8B4513, 
+  #FFD700, 
+  #87CEEB  
+);
+  z-index: 1;
+  transition: width .35s;
+}
+
+button:hover {
+  color: #fff;
+}
+
+button:hover:after {
+  width: 100%;
+}
