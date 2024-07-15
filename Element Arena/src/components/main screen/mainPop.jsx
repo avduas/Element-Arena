@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import './mainPop.css'
+import './mainPop.css';
 
 export default function MainPop() {
     useEffect(() => {
@@ -7,20 +7,27 @@ export default function MainPop() {
     }, []);
 
     function showPopup() {
-        document.getElementById('openModal-1').style.display = 'block';
+        const modal = document.getElementById('openModal-1');
+        modal.style.visibility = 'visible';
+        modal.style.opacity = '1';
     }
 
     function closePopup() {
-        document.getElementById('openModal-1').style.display = 'none';
+        const modal = document.getElementById('openModal-1');
+        modal.style.opacity = '0';
+        setTimeout(() => {
+            modal.style.visibility = 'hidden';
+        }, 350);
     }
+
     return (
         <>
             <div id="openModal-1" className="modal-1">
                 <div className="modal-dialog-1">
-                    <div>Elemental Battle</div>
-                    <div>
-                        <button onClick={closePopup} className='wrapper'><span>Begin</span></button>
-                    </div>
+                    <div className='mainName'>Elemental Battle</div>
+                </div>
+                <div>
+                    <button onClick={closePopup} className='wrapper'><span>Begin</span></button>
                 </div>
             </div>
         </>
