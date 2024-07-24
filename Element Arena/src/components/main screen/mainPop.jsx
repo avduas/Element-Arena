@@ -25,9 +25,9 @@ export default function MainPop() {
             <div id="openModal-1" className="modal-1">
                 <div className="modal-dialog-1">
                     <div className='mainName'>Elemental Battle</div>
-                </div>
-                <div>
-                    <button onClick={closePopup} className='wrapper'><span>Begin</span></button>
+                    <div>
+                        <button onClick={closePopup} className='wrapper'><span>Begin</span></button>
+                    </div>
                 </div>
             </div>
         </>

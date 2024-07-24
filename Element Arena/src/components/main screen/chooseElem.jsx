@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import ElementDetails from './elementDetails';
 import './chooseElem.css';
 
 export default function ChooseElement() {
@@ -13,21 +14,40 @@ export default function ChooseElement() {
     }
 
     return (
-        <div>
-            <div className={`upperBlock ${selectedElement ? 'selected' : ''}`}>
-                {['Fire', 'Water', 'Wind', 'Earth', 'Ice', 'Lightning'].map(element => (
-                    <div
-                        key={element}
-                        className={`element ${selectedElement === element ? 'center' : ''}`}
-                        onClick={() => !selectedElement && ChosenElement(element)}
-                    >
-                        <img src={`../../${element}.jpg`} alt={element} />
+        <div className="container">
+            {!selectedElement && (
+                <div className="upperBlock">
+                    <div className="element" data-name="Fire" onClick={() => ChosenElement('Fire')}>
+                        <img src="../../Fire.jpg" alt="Fire" />
                     </div>
-                ))}
-                {selectedElement && (
+                    <div className="element" data-name="Water" onClick={() => ChosenElement('Water')}>
+                        <img src="../../Water.jpg" alt="Water" />
+                    </div>
+                    <div className="element" data-name="Wind" onClick={() => ChosenElement('Wind')}>
+                        <img src="../../Wind.jpg" alt="Wind" />
+                    </div>
+                    <div className="element" data-name="Earth" onClick={() => ChosenElement('Earth')}>
+                        <img src="../../Earth.jpg" alt="Earth" />
+                    </div>
+                    <div className="element" data-name="Ice" onClick={() => ChosenElement('Ice')}>
+                        <img src="../../Ice.jpg" alt="Ice" />
+                    </div>
+                    <div className="element" data-name="Lightning" onClick={() => ChosenElement('Lightning')}>
+                        <img src="../../Lightning.jpg" alt="Lightning" />
+                    </div>
+                </div>
+            )}
+            {selectedElement && (
+                <div className='mainSelect'>
+                <div className="selectedElement">
+                    <div className='picture'>
+                    <img src={`../../${selectedElement}.jpg`} alt={selectedElement} />
+                    </div>
+                    <ElementDetails element={selectedElement} />
+                </div>
                     <button className="resetButton" onClick={handleReset}>Back</button>
-                )}
-            </div>
+                </div>
+            )}  
         </div>
     );
 }

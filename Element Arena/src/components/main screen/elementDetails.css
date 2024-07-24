@@ -1,0 +1,24 @@
+
+.resetButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: gold;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    font-family: "KnightWarrior-w16n8", sans-serif;
+    position: relative;
+    width: 100px;
+    letter-spacing: 2px;
+}
+
+.resetButton:hover {
+    background-color: darkgoldenrod;
+}
+
+.selectedElement{
+    display: flex;
+    flex-direction: row;
+}
