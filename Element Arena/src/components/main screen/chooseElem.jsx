@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import ElementDetails from './elementDetails';
 import './chooseElem.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function ChooseElement() {
     const [selectedElement, setSelectedElement] = useState(null);
+    const navigate = useNavigate();
 
     function ChosenElement(element) {
         setSelectedElement(element);
@@ -11,6 +13,10 @@ export default function ChooseElement() {
 
     function handleReset() {
         setSelectedElement(null);
+    }
+
+    function StartGame() {
+        navigate('/game', {state: {element: selectedElement}})
     }
 
     return (
@@ -39,15 +45,18 @@ export default function ChooseElement() {
             )}
             {selectedElement && (
                 <div className='mainSelect'>
-                <div className="selectedElement">
-                    <div className='picture'>
-                    <img src={`../../${selectedElement}.jpg`} alt={selectedElement} />
+                    <div className="selectedElement">
+                        <div className='picture'>
+                            <img src={`../../${selectedElement}.jpg`} alt={selectedElement} />
+                        </div>
+                        <ElementDetails element={selectedElement} />
                     </div>
-                    <ElementDetails element={selectedElement} />
-                </div>
+                    <div className='buttonBox'>
                     <button className="resetButton" onClick={handleReset}>Back</button>
+                    <button className='playButton' onClick={StartGame}>Play</button>
+                    </div>
                 </div>
-            )}  
+            )}
         </div>
     );
 }

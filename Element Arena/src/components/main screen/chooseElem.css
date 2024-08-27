@@ -81,4 +81,10 @@
       flex-direction: column;
       align-items: center;
   }
-  
+
+  .buttonBox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 100vh;
+  }

@@ -1,8 +1,6 @@
-
-.resetButton {
+.resetButton, .playButton {
     margin-top: 20px;
     padding: 10px 20px;
-    background-color: gold;
     border: none;
     color: black;
     cursor: pointer;
@@ -14,11 +12,23 @@
     letter-spacing: 2px;
 }
 
+.resetButton {
+    background-color: gold;
+}
+
 .resetButton:hover {
     background-color: darkgoldenrod;
 }
 
-.selectedElement{
+.playButton {
+    background-color: green;
+}
+
+.playButton:hover {
+    background-color: darkgreen;
+}
+
+.selectedElement {
     display: flex;
     flex-direction: row;
 }

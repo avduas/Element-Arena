@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainScreen from './components/main screen/mainScreen';
+import PlayGround from './components/Playground/field';
 
 function App() {
 
@@ -7,14 +8,10 @@ function App() {
     <Router>
       <Routes>
         <Route path='/' element={<MainScreen />} />
-        <Route path='/mock' element={<MockComponent />} /> 
+        <Route path='/game' element={<PlayGround />} />
       </Routes>
     </Router>
   );
-}
-
-function MockComponent() {
-  return <div>Mock Component</div>;
 }
 
 export default App;
